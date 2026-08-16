@@ -1440,17 +1440,6 @@ Then:
 ╚══════════════════════════════════╝
 ```
 
-# THE ORDER THAT MATTERS MOST
-
-**Don't do this:**
-
-Idea → custom motherboard → custom OS → discover everything is broken.
-
-**Do this:**
-
-Research → threat model → electronics → networking → VoIP → bench prototype → first call → security research → isolation → battery → PCB skills → custom board → enclosure → OS hardening → auditing → reproducibility → documentation → external review → public release.
-
-Your first major objective is **not ONYX-NULL 1.0**.
 
 Your first objective is:
 
