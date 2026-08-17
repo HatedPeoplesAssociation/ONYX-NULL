@@ -1,0 +1,50 @@
+# ONYX-NULL Code Owners
+#
+# Update usernames as maintainers and subsystem owners are added.
+#
+# Current default owner:
+* @HatedPeoplesAssociation
+
+# Documentation
+/docs/ @HatedPeoplesAssociation
+
+# Hardware
+/hardware/ @HatedPeoplesAssociation
+
+# Mechanical
+/mechanical/ @HatedPeoplesAssociation
+
+# Firmware
+/firmware/ @HatedPeoplesAssociation
+
+# Operating System
+/os/ @HatedPeoplesAssociation
+
+# Software
+/software/ @HatedPeoplesAssociation
+
+# Tests
+/tests/ @HatedPeoplesAssociation
+
+# Tools
+/tools/ @HatedPeoplesAssociation
+
+# Prototypes
+/prototypes/ @HatedPeoplesAssociation
+
+# Media
+/media/ @HatedPeoplesAssociation
+
+# Licensing
+/licenses/ @HatedPeoplesAssociation
+
+# GitHub configuration
+/.github/ @HatedPeoplesAssociation
+
+# Security-sensitive files
+/SECURITY.md @HatedPeoplesAssociation
+/docs/Threat_Model.md @HatedPeoplesAssociation
+/docs/Trust_Model.md @HatedPeoplesAssociation
+/docs/Security_Goals.md @HatedPeoplesAssociation
+/docs/Hardware_Trust.md @HatedPeoplesAssociation
+/docs/Proprietary_Components.md @HatedPeoplesAssociation
