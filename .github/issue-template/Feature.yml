@@ -1,0 +1,104 @@
+name: Feature Request
+description: Propose a new ONYX-NULL feature or capability
+title: "[FEATURE] "
+labels:
+  - "type:feature"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Feature proposals should explain the problem first, then the proposed solution.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Hardware
+        - Firmware
+        - NULL/OS
+        - Software
+        - Networking
+        - Mechanical
+        - Security
+        - Privacy
+        - Tools
+        - Tests
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What problem or limitation does this feature address?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Solution
+      description: Describe the proposed feature.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: What other approaches could solve the same problem?
+    validations:
+      required: false
+
+  - type: textarea
+    id: security
+    attributes:
+      label: Security Impact
+      description: What new privileges, interfaces, or attack surface might this introduce?
+    validations:
+      required: true
+
+  - type: textarea
+    id: privacy
+    attributes:
+      label: Privacy Impact
+      description: Could this expose new data, identifiers, metadata, sensors, or network behavior?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proprietary
+    attributes:
+      label: Proprietary Dependencies
+      description: Does this require proprietary hardware, firmware, software, or services?
+      placeholder: |
+        None
+
+        or
+
+        Component:
+        Reason:
+        Open alternative:
+    validations:
+      required: true
+
+  - type: textarea
+    id: success
+    attributes:
+      label: Success Criteria
+      description: How would we know this feature works?
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I reviewed the existing roadmap and documentation.
+          required: true
+        - label: I considered security and privacy implications.
+          required: true
