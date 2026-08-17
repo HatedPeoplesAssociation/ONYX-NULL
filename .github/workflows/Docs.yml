@@ -1,0 +1,55 @@
+name: Documentation Check
+
+on:
+  push:
+    paths:
+      - "**/*.md"
+      - ".github/workflows/docs.yml"
+  pull_request:
+    paths:
+      - "**/*.md"
+      - ".github/workflows/docs.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  documentation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check required project files
+        run: |
+          required_files=(
+            "README.md"
+            "SECURITY.md"
+            "CONTRIBUTING.md"
+            "CODE_OF_CONDUCT.md"
+            "Road_Map.md"
+            "docs/Threat_Model.md"
+            "docs/Trust_Model.md"
+          )
+
+          failed=0
+
+          for file in "${required_files[@]}"; do
+            if [[ ! -f "$file" ]]; then
+              echo "Missing required file: $file"
+              failed=1
+            fi
+          done
+
+          exit "$failed"
+
+      - name: Check for trailing whitespace
+        run: |
+          if git grep -nI -E '[[:blank:]]+$' -- '*.md'; then
+            echo
+            echo "Trailing whitespace found."
+            exit 1
+          fi
+
+          echo "No trailing whitespace found."
