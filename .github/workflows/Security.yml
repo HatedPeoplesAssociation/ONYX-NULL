@@ -1,0 +1,61 @@
+name: Repository Security Check
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  repository-security:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check for obvious private key files
+        run: |
+          matches="$(find . -type f \
+            \( -name "*.pem" \
+            -o -name "*.key" \
+            -o -name "id_rsa" \
+            -o -name "id_ed25519" \
+            \) \
+            -not -path "./.git/*")"
+
+          if [[ -n "$matches" ]]; then
+            echo "Potential private key material found:"
+            echo "$matches"
+            exit 1
+          fi
+
+      - name: Check for common secret filenames
+        run: |
+          matches="$(find . -type f \
+            \( -name ".env" \
+            -o -name "credentials.json" \
+            -o -name "secrets.json" \
+            -o -name "secrets.yml" \
+            -o -name "secrets.yaml" \
+            \) \
+            -not -path "./.git/*")"
+
+          if [[ -n "$matches" ]]; then
+            echo "Potential secret file found:"
+            echo "$matches"
+            exit 1
+          fi
+
+      - name: Verify security documentation exists
+        run: |
+          test -f SECURITY.md
+          test -f docs/Threat_Model.md
+          test -f docs/Trust_Model.md
+          test -f docs/Security_Goals.md
+
+      - name: Security check complete
+        run: |
+          echo "Basic repository security checks passed."
+          echo "This workflow is not a complete security audit."
