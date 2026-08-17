@@ -1,0 +1,60 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  project-validation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show repository state
+        run: |
+          echo "ONYX-NULL build infrastructure"
+          echo
+          echo "Current stage: Research / Pre-P0"
+          echo "No unified production build exists yet."
+
+      - name: Verify project directories
+        run: |
+          required_dirs=(
+            "docs"
+            "hardware"
+            "mechanical"
+            "firmware"
+            "os"
+            "software"
+            "tools"
+            "tests"
+            "prototypes"
+            "media"
+          )
+
+          failed=0
+
+          for dir in "${required_dirs[@]}"; do
+            if [[ ! -d "$dir" ]]; then
+              echo "Missing required directory: $dir"
+              failed=1
+            fi
+          done
+
+          exit "$failed"
+
+      - name: Future build placeholder
+        run: |
+          echo "Future build stages may include:"
+          echo "- Firmware"
+          echo "- NULL/OS"
+          echo "- Software"
+          echo "- Documentation"
+          echo "- Reproducibility checks"
