@@ -1,0 +1,9 @@
+Category,Component,Manufacturer,Part Number,Revision,Quantity,Unit Cost,Total Cost,Supplier,Source Status,Firmware Required,Notes
+Compute,TBD,TBD,TBD,TBD,1,0.00,0.00,TBD,TBD,TBD,P0 compute platform
+Display,TBD,TBD,TBD,TBD,1,0.00,0.00,TBD,TBD,TBD,P0 display
+Wi-Fi,TBD,TBD,TBD,TBD,1,0.00,0.00,TBD,TBD,TBD,P0 network interface
+Audio,TBD,TBD,TBD,TBD,1,0.00,0.00,TBD,TBD,TBD,P0 audio interface
+Microphone,TBD,TBD,TBD,TBD,1,0.00,0.00,TBD,TBD,TBD,P0 microphone
+Speaker,TBD,TBD,TBD,TBD,1,0.00,0.00,TBD,TBD,TBD,P0 speaker or headset
+Power,TBD,TBD,TBD,TBD,1,0.00,0.00,TBD,TBD,TBD,P0 power supply
+Cable,TBD,TBD,TBD,TBD,1,0.00,0.00,TBD,TBD,TBD,Required cable
