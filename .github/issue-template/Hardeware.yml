@@ -1,0 +1,140 @@
+name: Hardware Proposal
+description: Propose or evaluate a hardware component, circuit, or design change
+title: "[HARDWARE] "
+labels:
+  - "area:hardware"
+  - "type:design"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for components, circuits, interfaces, PCB architecture, and hardware revisions.
+
+  - type: dropdown
+    id: subsystem
+    attributes:
+      label: Subsystem
+      options:
+        - Compute
+        - Mainboard
+        - Power
+        - Radio
+        - Audio
+        - Display
+        - Camera
+        - Sensors
+        - USB
+        - Security Hardware
+        - Mechanical Interface
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: component
+    attributes:
+      label: Component / Design
+      placeholder: Manufacturer + part number, or design name
+    validations:
+      required: true
+
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Purpose
+      description: What role would this hardware play?
+    validations:
+      required: true
+
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements
+      placeholder: |
+        Voltage:
+        Current:
+        Interface:
+        Linux support:
+        Package:
+        Availability:
+    validations:
+      required: false
+
+  - type: textarea
+    id: documentation
+    attributes:
+      label: Documentation
+      placeholder: |
+        Datasheet:
+        Reference manual:
+        Manufacturer page:
+        Schematics:
+    validations:
+      required: false
+
+  - type: textarea
+    id: firmware
+    attributes:
+      label: Firmware / Driver Requirements
+      placeholder: |
+        Firmware required:
+        Firmware open:
+        Driver open:
+        Host interface:
+    validations:
+      required: true
+
+  - type: textarea
+    id: trust
+    attributes:
+      label: Trust / Security Impact
+      description: What access would this component have?
+      placeholder: |
+        DMA:
+        Memory:
+        Network:
+        Storage:
+        Secrets:
+        Isolation:
+    validations:
+      required: true
+
+  - type: textarea
+    id: power
+    attributes:
+      label: Physical Isolation
+      placeholder: |
+        Can it be physically powered off?
+        Independent power rail?
+        Hardware enable pin?
+        Reset pin?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: What competing components or architectures should be compared?
+    validations:
+      required: false
+
+  - type: textarea
+    id: decision
+    attributes:
+      label: Recommendation
+      description: Candidate, reject, prototype, or further research?
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I checked whether public documentation exists.
+          required: true
+        - label: I documented proprietary firmware requirements.
+          required: true
+        - label: I considered physical isolation.
+          required: true
