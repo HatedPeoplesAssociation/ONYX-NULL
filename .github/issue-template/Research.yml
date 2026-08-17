@@ -1,0 +1,103 @@
+name: Research Task
+description: Open a structured ONYX-NULL research question
+title: "[RESEARCH] "
+labels:
+  - "type:research"
+  - "area:research"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Research issues should end with a documented conclusion or explicit open questions.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Research Question
+      description: What exactly needs to be determined?
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why It Matters
+      description: How does this affect ONYX-NULL?
+    validations:
+      required: true
+
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements
+      description: What properties must a successful answer satisfy?
+      placeholder: |
+        Security:
+        Privacy:
+        Hardware:
+        Software:
+        Cost:
+        Availability:
+    validations:
+      required: false
+
+  - type: textarea
+    id: candidates
+    attributes:
+      label: Candidates / Approaches
+      description: What options are being evaluated?
+    validations:
+      required: false
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Primary Sources
+      description: Prefer datasheets, official documentation, specifications, and research papers.
+    validations:
+      required: false
+
+  - type: textarea
+    id: security
+    attributes:
+      label: Security Considerations
+    validations:
+      required: true
+
+  - type: textarea
+    id: privacy
+    attributes:
+      label: Privacy Considerations
+    validations:
+      required: true
+
+  - type: textarea
+    id: proprietary
+    attributes:
+      label: Proprietary Dependencies
+      placeholder: |
+        None known
+
+        or
+
+        Dependency:
+        Reason:
+        Open alternative:
+    validations:
+      required: false
+
+  - type: textarea
+    id: testing
+    attributes:
+      label: Testing / Validation
+      description: How can findings be validated experimentally?
+    validations:
+      required: false
+
+  - type: textarea
+    id: conclusion
+    attributes:
+      label: Conclusion
+      description: Fill this in when the research is completed.
+    validations:
+      required: false
