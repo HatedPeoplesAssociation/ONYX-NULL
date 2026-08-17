@@ -1,0 +1,129 @@
+name: Bug Report
+description: Report reproducible incorrect behavior in ONYX-NULL
+title: "[BUG] "
+labels:
+  - "type:bug"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem.
+
+        Please provide enough information for another person to reproduce the issue.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of ONYX-NULL is affected?
+      options:
+        - Hardware
+        - Firmware
+        - NULL/OS
+        - Software
+        - Networking
+        - Mechanical
+        - Tools
+        - Tests
+        - Documentation
+        - Prototype
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: prototype
+    attributes:
+      label: Prototype / Hardware Revision
+      description: Example: ONX-P0 or ONX-M1 REV-A
+      placeholder: ONX-P0
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: Software / Firmware Version
+      description: Include relevant version, commit, or branch.
+      placeholder: main / commit SHA / version
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What is wrong?
+      placeholder: Describe the problem clearly.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Provide exact steps if possible.
+      placeholder: |
+        1. Do this
+        2. Run this
+        3. Observe this
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      placeholder: What should have happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed Behavior
+      placeholder: What actually happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / Evidence
+      description: Paste relevant logs, measurements, screenshots, or paths to evidence.
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: |
+        OS:
+        Kernel:
+        Hardware:
+        Firmware:
+        Network:
+    validations:
+      required: false
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround
+      placeholder: Is there a temporary workaround?
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues for duplicates.
+          required: true
+        - label: I removed credentials and sensitive information from logs.
+          required: true
+        - label: This is not a private security vulnerability disclosure.
+          required: true
